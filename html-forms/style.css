@@ -1,0 +1,35 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    background: #210551 ;
+    font-family: Arial, sans-serif;
+    font: 20px;
+    color: rgb(220, 219, 214);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    min-height: 100vh;
+    padding: 60px;
+  }
+
+  h1 {
+    font: 45px;
+  }
+
+form {
+    max-width: 600px;
+    margin: 0 auto; /* Center the form */
+    padding: 40px;
+    font-size: 1.2rem; /* Increase the font size */
+}
+
+fieldset {
+    border: 2px solid #ccc;
+    padding: 20px;
+    border-radius: 10px;
+}

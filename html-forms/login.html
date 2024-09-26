@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HTML Forms</title>
+  </head>
+  <body>
+    <h1><strong>Login !</strong></h1><br>
+    <form action="/the-form-submits-here" method="POST">
+      
+      <fieldset aria-labelledby="signIn-legend">
+        <legend id="signIn-legend"><strong>Sign In:</strong></legend>
+        <div>
+          <br />
+          <div>
+            <label for="user-choice"
+              ><strong>What type of Crypto user are you ?</strong></label
+            ><br>
+            <div><br>
+            <center> <select name="users" id="user-choice">
+                <option value="">--Please select an option--</option>
+                <option value="Bitcoin Maxi">Bitcoin Maxi</option>
+                <option value="Cryptosis">Cryptosis</option>
+                <option value="Bagholder">Bagholder</option>
+                <option value="Ethereum Wizard">Ethereum Wizard</option>
+                <option value="DeFi Masters">DeFi Masters</option>
+                <option value="Diamond Hands">Diamond Hands</option>
+                <option value="Degen">Degen</option>
+                <option value="NFT Specialist">NFT Specialist</option>
+              </select>
+            </div>
+            <br />
+          </div>
+          <br />
+          <label for="user-input"><strong>User:</strong></label>
+          <input type="user" id="user-input" required />
+        </div>
+        <br />
+        <div>
+          <label for="password-input"><strong>Password:</strong></label>
+          <input type="password" id="password-input" required />
+        </div>
+        <div>
+          <br />
+        </div><br>
+        <center><button type="submit"><strong>Submit</strong></button></center>
+     </fieldset>
+    </form> 
+  </body>
+  <link rel="stylesheet" href="./style.css" />
+</html>
