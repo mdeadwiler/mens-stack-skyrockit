@@ -39,30 +39,17 @@ app.use('/users/:userId/applications', applicationsController); // New!
 
 
 
-
-// server.js
-
 app.get('/', (req, res) => {
   // Check if the user is signed in
   if (req.session.user) {
     // Redirect signed-in users to their applications index
-    res.redirect(`./users/${req.session.user._id}/applications`);
+    res.redirect(`/users/${req.session.user._id}/applications`);
   } else {
     // Show the homepage for users who are not signed in
     res.render('index.ejs');
   }
 });
 
-
-
-
-
-
-app.use('/auth', authController);
-app.use('/users/:userId/applications', applicationsController); // New!
-
-
-app.use(isSignedIn); // use new isSignedIn middleware here
 app.listen(port, () => {
   console.log(`The express app is ready on port ${port}!`);
 });
