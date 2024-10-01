@@ -9,7 +9,7 @@ const session = require('express-session');
 const isSignedIn = require('./middleware/is-signed-in.js');
 const passUserToView = require('./middleware/pass-user-to-view.js');
 const authController = require('./controllers/auth.js');
-// server.js
+
 
 const applicationsController = require('./controllers/applications.js');
 
@@ -31,17 +31,14 @@ app.use(
     saveUninitialized: true,
   })
 );
-
+app.use(passUserToView); // use new passUserToView middleware here
 // Keep this right before port and after routes----------------------
 app.use('/auth', authController);
 app.use(isSignedIn);
 app.use('/users/:userId/applications', applicationsController); // New!
 
-app.listen(port, () => {
-  console.log(`The express app is ready on port ${port}!`);
-});
 
-app.use(passUserToView); // use new passUserToView middleware here
+
 
 // server.js
 
@@ -59,18 +56,13 @@ app.get('/', (req, res) => {
 
 
 
-/*app.get('/vip-lounge', (req, res) => {
-  if (req.session.user) {
-    res.send(`Welcome to the party ${req.session.user.username}.`);
-  } else {
-    res.send('Sorry, no guests allowed.');
-  }
-});*/
+
 
 app.use('/auth', authController);
-app.use(isSignedIn); // use new isSignedIn middleware here
 app.use('/users/:userId/applications', applicationsController); // New!
 
+
+app.use(isSignedIn); // use new isSignedIn middleware here
 app.listen(port, () => {
   console.log(`The express app is ready on port ${port}!`);
 });
