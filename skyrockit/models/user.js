@@ -22,3 +22,22 @@ const applicationSchema = new mongoose.Schema({
     enum: ['interested', 'applied', 'interviewing', 'rejected', 'accepted'],
   },
 });
+
+
+const userSchema = mongoose.Schema({
+  username: {
+    type: String,
+    required: true,
+  },
+  password: {
+    type: String,
+    required: true,
+  },
+  applications: [applicationSchema]
+});
+
+const User = mongoose.model('User', userSchema);
+
+module.exports = User;
+//const Application = mongoose.model('Application', applicationSchema)
+ //module.exports = Application;
