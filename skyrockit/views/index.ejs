@@ -8,10 +8,22 @@
   <title>Skyrockit</title> 
 </head>
 <body>
-  <h1>Skyrockit</h1>
-  <p>A job application tracker.</p>
-  <a href="/auth/sign-up">Sign up</a>
-  <a href="/auth/sign-in">Sign in</a>
+  <%- include('../partials/_navbar.ejs') %> // add your nav here
+    <h1>Create a new account!</h1>
+  <form action="/auth/sign-up" method="POST">
+    <label for="username">Username:</label>
+    <input type="text" name="username" id="username" required />
+    <label for="password">Password:</label>
+    <input type="password" name="password" id="password" required />
+    <label for="confirmPassword">Confirm Password:</label>
+    <input
+      type="password"
+      name="confirmPassword"
+      id="confirmPassword"
+      required
+    />
+    <button type="submit">Sign up</button>
+  </form>
 </body>
 </html>
 
